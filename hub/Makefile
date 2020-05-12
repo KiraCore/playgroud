@@ -5,8 +5,8 @@ COMMIT := $(shell git log -1 --format='%H')
 
 # TODO: Update the ldflags with the app, client & server names
 ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=NewApp \
-	-X github.com/cosmos/cosmos-sdk/version.ServerName=asd \
-	-X github.com/cosmos/cosmos-sdk/version.ClientName=ascli \
+	-X github.com/cosmos/cosmos-sdk/version.ServerName=sekaid \
+	-X github.com/cosmos/cosmos-sdk/version.ClientName=sekaicli \
 	-X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 	-X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) 
 
@@ -15,8 +15,8 @@ BUILD_FLAGS := -ldflags '$(ldflags)'
 all: install
 
 install: go.sum
-		go install $(BUILD_FLAGS) ./cmd/aud
-		go install $(BUILD_FLAGS) ./cmd/acli
+		go install $(BUILD_FLAGS) ./cmd/sekaid
+		go install $(BUILD_FLAGS) ./cmd/sekaicli
 
 go.sum: go.mod
 		@echo "--> Ensure dependencies have not been modified"
