@@ -1,7 +1,7 @@
 package createOrderBook
 
 import (
-	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/KiraCore/cosmos-sdk/codec"
 )
 
 func RegisterCodec(codec *codec.Codec) {
