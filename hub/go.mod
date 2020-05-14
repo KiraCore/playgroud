@@ -1,11 +1,11 @@
-module github.com/kira/hub
+module github.com/kiraCore/playground/hub
 
 go 1.13
 
 require (
 	github.com/btcsuite/btcd v0.0.0-20190807005414-4063feeff79a // indirect
 	github.com/coreos/go-etcd v2.0.0+incompatible // indirect
-	github.com/cosmos/cosmos-sdk v0.38.3
+	github.com/github.com/cosmos/cosmos-sdk v0.34.4
 	github.com/cpuguy83/go-md2man v1.0.10 // indirect
 	github.com/golang/mock v1.3.1 // indirect
 	github.com/onsi/ginkgo v1.8.0 // indirect
