@@ -4,21 +4,30 @@ import (
 	"fmt"
 	"strings"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/KiraCore/cosmos-sdk/types"
 )
 
-type ACoin struct {
-	Name string         `json:"name"`
-	Owner sdk.AccAddress `json:"owner"`
+type OrderBook struct {
+	Index int32            `json:"index"`
+	Base sdk.Coins		   `json:"base"`
+	Quote sdk.Coins		   `json:"base"`
+	Mnemonic string 	   `json:"mnemonic"`
+	Curator sdk.AccAddress `json:"curator"`
 }
 
-func NewACoin() ACoin {
-	return ACoin{
-		Name: "Acoin",
-		Owner: nil,
+func NewOrderBook() OrderBook {
+	return OrderBook{
+		Index: nil,
+		Base: nil,
+		Quote: nil,
+		Mnemonic: "",
+		Curator: nil,
 	}
 }
 
-func (a ACoin) String() string {
-	return strings.TrimSpace(fmt.Sprintf(`Name: %s, Owner: %s`, a.Name, a.Owner))
+func (o OrderBook) String() string {
+	if o.Mnemonic == "" {
+		return strings.TrimSpace(fmt.Sprintf(`Index: %s, Base: %s, Quote: %s, Curator: %s`, o.Index, o.Base, o.Quote, o.Curator))
+	}
+	return strings.TrimSpace(fmt.Sprintf(`Index: %s, Base: %s, Quote: %s, Mnemonic: %s, Curator: %s`, o.Index, o.Base, o.Quote, o.Mnemonic, o.Curator))
 }
