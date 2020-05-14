@@ -1,11 +1,14 @@
 package types
 
 import (
-	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
+	errors "github.com/cosmos/cosmos-sdk/types/errors"
 )
 
-// TODO: Fill out some custom errors for the module
-// You can see how they are constructed below:
-// var (
-//	ErrInvalid = sdkerrors.Register(ModuleName, 1, "custom error message")
-// )
+var (
+	UnknownMessageCode = errors.Register(ModuleName, 001, "UnknownMessageCode")
+	IncorrectMessageCode = errors.Register(ModuleName, 002, "IncorrectMessageCode")
+	UnknownQueryCode = errors.Register(ModuleName, 101, "UnknownQueryCode")
+	IncorrectQueryCode = errors.Register(ModuleName, 102, "IncorrectQueryCode")
+	EntityNotFoundCode = errors.Register(ModuleName, 103, "EntityNotFoundCode")
+)
+

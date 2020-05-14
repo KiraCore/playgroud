@@ -10,7 +10,7 @@ import (
 type OrderBook struct {
 	Index int32            `json:"index"`
 	Base sdk.Coins		   `json:"base"`
-	Quote sdk.Coins		   `json:"base"`
+	Quote sdk.Coins		   `json:"quote"`
 	Mnemonic string 	   `json:"mnemonic"`
 	Curator sdk.AccAddress `json:"curator"`
 }
